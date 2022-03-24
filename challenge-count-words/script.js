@@ -1,6 +1,16 @@
 function calculateWords(chapterOfABook) {
   const wordCount = {};
 
+  const chapterOfABookArray = chapterOfABook
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .split(" ");
+  chapterOfABookArray.forEach((element) => {
+    if (wordCount.element === undefined) {
+      wordCount.element = 1;
+    } else {
+      wordCount.element += 1;
+    }
+  });
   // Write your code in here
 
   return wordCount;
